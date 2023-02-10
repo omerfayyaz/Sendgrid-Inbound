@@ -59,7 +59,7 @@ class PostsController extends Controller
                 "omer.fayyaz@vividsol.com",
             ];
             $subject = "SG Inbound Tutorial: ".$post->title;
-            $from = "replies@emailtest.vividsol.dev";
+            $from = "replies+".$post->id."@emailtest.vividsol.dev";
             $text = "Reply to this email to leave a comment on " . $post->title;
 
             $mail = new Mail();
