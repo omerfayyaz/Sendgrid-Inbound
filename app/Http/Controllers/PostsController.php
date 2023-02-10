@@ -56,7 +56,7 @@ class PostsController extends Controller
             $post = Post::findOrFail($id);
 
             $mails = [
-                "omer.fayyaz@vividsol.com",
+                "omerfayyaz.engr@gmail.com",
             ];
             $subject = "SG Inbound Tutorial: ".$post->title;
             $from = "replies+".$post->id."@emailtest.vividsol.dev";
