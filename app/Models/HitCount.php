@@ -10,6 +10,8 @@ class HitCount extends Model
     use HasFactory;
 
     protected $fillable = [
-        'count'
+        'from',
+        'to',
+        'text'
     ];
 }

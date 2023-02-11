@@ -15,7 +15,9 @@ return new class extends Migration
     {
         Schema::create('hit_counts', function (Blueprint $table) {
             $table->id();
-            $table->integer('count')->default(0);
+            $table->string('from')->nullable();
+            $table->string('to')->nullable();
+            $table->string('text')->nullable();
             $table->timestamps();
         });
     }

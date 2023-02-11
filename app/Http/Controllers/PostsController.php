@@ -30,11 +30,17 @@ class PostsController extends Controller
 
         public function receiveEmailResponse(Request $request) {
 
-            HitCount::where('id', '1')->increment('count');
+            // HitCount::where('id', '1')->increment('count');
 
             $from = $request->input("from");
             $to = $request->input("to");
             $body = $request->input("text");
+
+            HitCount::create([
+                'from' => $from,
+                'to' => $to,
+                'text' => $body
+            ]);
 
             preg_match("#<(.*?)>#", $from, $sender);
             preg_match("#<(.*?)>#", $to, $recipient);
@@ -63,7 +69,7 @@ class PostsController extends Controller
             $post = Post::findOrFail($id);
 
             $mails = [
-                "omerfayyaz.engr@gmail.com",
+                "replies@emailtest.vividsol.dev",
             ];
             $subject = "SG Inbound Tutorial: ".$post->title;
             $from = "replies+".$post->id."@emailtest.vividsol.dev";
