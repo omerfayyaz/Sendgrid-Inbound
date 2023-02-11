@@ -82,6 +82,7 @@ class PostsController extends Controller
             try {
                 $response = $sg->send($mail);
                 $context = json_decode($response->body());
+                dd($response);
                 if ($response->statusCode() == 202) {
                     echo "Emails have been sent out successfully!";
                 }else {
