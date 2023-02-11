@@ -28,11 +28,6 @@ class PostsController extends Controller
         }
 
         public function receiveEmailResponse(Request $request) {
-            Response::create([
-                'email' => 'test',
-                'post_id' => '100',
-                'body' => 'test'
-            ]);
 
             $from = $request->input("from");
             $to = $request->input("to");
