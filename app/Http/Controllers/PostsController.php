@@ -63,7 +63,7 @@ class PostsController extends Controller
             $post = Post::findOrFail($id);
 
             $mails = [
-                "omerfayyaz.engr@gmail.com",
+                "replies@emailtest.vividsol.dev",
             ];
             $subject = "SG Inbound Tutorial: ".$post->title;
             $from = "replies+".$post->id."@inbound.emailtest.vividsol.dev";
@@ -86,7 +86,7 @@ class PostsController extends Controller
                 if ($response->statusCode() == 202) {
                     echo "Emails have been sent out successfully!";
                 }else {
-                    echo "Failed to send email";
+                    echo $response;
                     Log::error("Failed to send email", ["context" => $context]);
                 }
             } catch (\Exception $e) {
