@@ -1,6 +1,7 @@
 <?php
 namespace App\Http\Controllers;
 
+use App\Models\HitCount;
 use App\Models\Post;
 use App\Models\Response;
 use Illuminate\Http\Request;
@@ -28,6 +29,8 @@ class PostsController extends Controller
         }
 
         public function receiveEmailResponse(Request $request) {
+
+            HitCount::where('id', '1')->increment('count');
 
             $from = $request->input("from");
             $to = $request->input("to");
