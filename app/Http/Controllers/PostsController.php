@@ -86,7 +86,7 @@ class PostsController extends Controller
                 if ($response->statusCode() == 202) {
                     echo "Emails have been sent out successfully!";
                 }else {
-                    echo $response;
+                    dd($response);
                     Log::error("Failed to send email", ["context" => $context]);
                 }
             } catch (\Exception $e) {
