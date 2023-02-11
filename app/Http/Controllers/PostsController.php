@@ -63,10 +63,10 @@ class PostsController extends Controller
             $post = Post::findOrFail($id);
 
             $mails = [
-                "omerfayyaz.engr@gmail.com",
+                "replies@emailtest.vividsol.dev",
             ];
             $subject = "SG Inbound Tutorial: ".$post->title;
-            $from = "replies+".$post->id."@emailtest.vividsol.dev";
+            $from = "replies+".$post->id."@inbound.emailtest.vividsol.dev";
             $text = "Reply to this email to leave a comment on " . $post->title;
 
             $mail = new Mail();
