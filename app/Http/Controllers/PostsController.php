@@ -66,7 +66,7 @@ class PostsController extends Controller
                 "replies@emailtest.vividsol.dev",
             ];
             $subject = "SG Inbound Tutorial: ".$post->title;
-            $from = "replies+".$post->id."@inbound.emailtest.vividsol.dev";
+            $from = "replies+".$post->id."@emailtest.vividsol.dev";
             $text = "Reply to this email to leave a comment on " . $post->title;
 
             $mail = new Mail();
@@ -86,7 +86,7 @@ class PostsController extends Controller
                 if ($response->statusCode() == 202) {
                     echo "Emails have been sent out successfully!";
                 }else {
-                    dd($response);
+                    echo "Failed to send email";
                     Log::error("Failed to send email", ["context" => $context]);
                 }
             } catch (\Exception $e) {
