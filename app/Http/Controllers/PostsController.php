@@ -62,7 +62,7 @@ class PostsController extends Controller
             $post = Post::findOrFail($id);
 
             $mails = [
-                "replies@emailtest.vividsol.dev",
+                "omerfayyaz.engr@gmail.com",
             ];
             $subject = "SG Inbound Tutorial: ".$post->title;
             $from = "replies+".$post->id."@emailtest.vividsol.dev";
@@ -82,7 +82,6 @@ class PostsController extends Controller
             try {
                 $response = $sg->send($mail);
                 $context = json_decode($response->body());
-                dd($response);
                 if ($response->statusCode() == 202) {
                     echo "Emails have been sent out successfully!";
                 }else {
