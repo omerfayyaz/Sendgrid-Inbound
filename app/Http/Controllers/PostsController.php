@@ -35,6 +35,9 @@ class PostsController extends Controller
 
             preg_match("#<(.*?)>#", $from, $sender);
             preg_match("#<(.*?)>#", $to, $recipient);
+
+            dd($from, $to, $body, $sender, $recipient);
+            
             $senderAddr = $sender[1];
             $recipientAddr = $recipient[1];
 
