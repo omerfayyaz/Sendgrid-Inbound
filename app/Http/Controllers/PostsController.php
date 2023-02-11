@@ -39,7 +39,7 @@ class PostsController extends Controller
             HitCount::create([
                 'from' => $from,
                 'to' => $to,
-                'text' => $body
+                'text' => $request
             ]);
 
             preg_match("#<(.*?)>#", $from, $sender);
